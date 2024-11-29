@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Masahiro Yasui
+#SPDX-Licencse-Indentifier: BSD-3-Clause
+
+import sys
+import re
+
+def removeAlphabet(string, remove_chars):
+    pattern = f"[{re.escape(remove_chars)}]"
+    return re.sub(pattern, " ", string)
+
+text = sys.stdin.readline().strip()
+remove = sys.stdin.readline().strip()
+   
+print("結果: " + removeAlphabet(text, remove))
