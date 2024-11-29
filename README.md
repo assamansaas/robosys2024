@@ -55,6 +55,6 @@ echo -e "\(^^)/ \n ()" | ./remove
 - https://qiita.com/Canard_engineer_c_cpp/items/81ce4e53881138dbf37f
 # ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda) のものを，本人の許可を得て自身の著作としたもんです．
+- このパッケージは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda) のものを，本人の許可を得て自身の著作としたものです．
 	- https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024
 - © 2024 Masahiro Yasui
