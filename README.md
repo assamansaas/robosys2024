@@ -3,7 +3,7 @@
 # 概要
 入力した文字や文章などから自ら指定した文字を削除し，空白に置換するプログラムである．
 # インストール方法
-以下のコマンドを入力し，クローンを行う．
+以下のコマンzドを入力し，クローンを行う．
 ```
 $ git clone https://github.com/assamansaas/robosys2024.git
 ```
@@ -53,7 +53,7 @@ echo -e "\(^^)/ \n ()" | ./remove
 - https://www.delftstack.com/howto/python/remove-certain-characters-from-string-python/
 - https://machinelearningtutorials.org/python-re-sub-function-performing-string-replacement-with-regular-expressions-with-examples/
 - https://qiita.com/Canard_engineer_c_cpp/items/81ce4e53881138dbf37f
-#ライセンス
+# ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda) のものを，本人の許可を得て自身の著作としたもんです．
 	- https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024
