@@ -6,10 +6,31 @@ import sys
 import re
 
 def removeAlphabet(string, remove_chars):
-    pattern = f"[{re.escape(remove_chars)}]"
-    return re.sub(pattern, " ", string)
+    try:
+        # 正規表現を使って、指定された文字をスペースに置き換える
+        pattern = f"[{re.escape(remove_chars)}]"
+        return re.sub(pattern, " ", string)
+    except Exception as e:
+        return f"Error occurred while processing: {e}"
 
-text = sys.stdin.readline().strip()
-remove = sys.stdin.readline().strip()
-   
-print("結果: " + removeAlphabet(text, remove))
+def main():
+    # コマンドライン引数で削除対象の文字を受け取る（デフォルト値: 空文字列）
+    remove_chars = sys.argv[1] if len(sys.argv) > 1 else ""
+
+    try:
+        # 標準入力からテキスト全体を読み取る
+        text = sys.stdin.read().strip()
+    except Exception as e:
+        text = ""
+
+    # 入力が空の場合でも処理を続行（空文字列をそのまま出力）
+    if not text:
+        print("")
+    else:
+        # 結果を出力
+        print("\n")
+        print(removeAlphabet(text, remove_chars))
+
+if __name__ == "__main__":
+    main()
+
