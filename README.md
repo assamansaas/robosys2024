@@ -16,11 +16,22 @@ $ cd robosys2024
 ```
 $ chmod +x remove
 ```
-最後に以下のような形式で実行する
-## 実行例
+最後に以下の方法の内どちらかを選んで実行する
+### 使用方法1
+```
+$ ./remove "lo"
+hello world
+
+```
+CtrlDで入力を終了する
+### 使用方法2
+```
+$ echo "hello world" | ./remove "lo" 
+```
+# 実行例
 - 一種類の文字を削除する場合の実行例
 ```
-$ echo -e "hello world \n l" | ./remove
+$ echo "hello world" | ./remove "l"
 ```
 - 実行結果
 ```
@@ -28,7 +39,7 @@ he  o wor d
 ```
 - 二種類以上の文字を削除する場合の実行例
 ```
-$ echo -e "hello world \n lod" | ./remove
+$ echo "hello world" | ./remove "lod"
 ```
 - 実行結果
 ```
@@ -36,11 +47,19 @@ he    w r
 ```
 - 記号が与えられた場合の実行例
 ```
-echo -e "\(^^)/ \n ()" | ./remove
+$ echo '!\(^@^)/!' | ./remove '!@()'
 ```
 - 実行結果
 ```
-\ ^^ /
+ \ ^ ^ / 
+```
+- 文字を何も削除しない場合
+```
+$ echo "hello world" | ./remove ""
+```
+- 実行結果
+```
+hello world
 ```
 # 必要なソフトウェア
 - Python
@@ -51,7 +70,8 @@ echo -e "\(^^)/ \n ()" | ./remove
 # 参考文献
 - https://python.19633.com/ja/Python/1010008164.html
 - https://docs.python.org/3/library/re.html
-- https://www.delftstack.com/howto/python/remove-certain-characters-from-string-python/
+- https://docs.python.org/3/library/sys.html
+- https://docs.python.org/3/tutorial/
 - https://machinelearningtutorials.org/python-re-sub-function-performing-string-replacement-with-regular-expressions-with-examples/
 - https://qiita.com/Canard_engineer_c_cpp/items/81ce4e53881138dbf37f
 # ライセンス

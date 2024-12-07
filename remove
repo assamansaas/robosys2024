@@ -1,36 +1,15 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2024 Masahiro Yasui
-#SPDX-Licencse-Indentifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
 
 import sys
 import re
 
 def removeAlphabet(string, remove_chars):
-    try:
-        # 正規表現を使って、指定された文字をスペースに置き換える
-        pattern = f"[{re.escape(remove_chars)}]"
-        return re.sub(pattern, " ", string)
-    except Exception as e:
-        return f"Error occurred while processing: {e}"
-
-def main():
-    # コマンドライン引数で削除対象の文字を受け取る（デフォルト値: 空文字列）
-    remove_chars = sys.argv[1] if len(sys.argv) > 1 else ""
-
-    try:
-        # 標準入力からテキスト全体を読み取る
-        text = sys.stdin.read().strip()
-    except Exception as e:
-        text = ""
-
-    # 入力が空の場合でも処理を続行（空文字列をそのまま出力）
-    if not text:
-        print("")
-    else:
-        # 結果を出力
-        print("\n")
-        print(removeAlphabet(text, remove_chars))
+    return re.sub(f"[{re.escape(remove_chars)}]", " ", string) if remove_chars else string
 
 if __name__ == "__main__":
-    main()
+    remove_chars = sys.argv[1] if len(sys.argv) > 1 else ""
+    text = sys.stdin.read().strip()
+    print(removeAlphabet(text, remove_chars))
 
