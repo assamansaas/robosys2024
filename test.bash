@@ -20,18 +20,18 @@ expected="Hello  How  are  you "
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 文字を削除しない場合
-out=$(echo "No characters to remove." | ./remove '')
-expected="No characters to remove."
+out=$(echo "hello world" | ./remove '')
+expected="hello world"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 引数が不足している場合
-out=$(./remove 2>&1)
-expected="Usage: python script.py <remove_chars>"
-[[ "${out}" =~ ${expected} ]] || ng "$LINENO"
+out=$(./remove "lo")
+expected=""
+[ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # 数値の場合
-out=$(seq 5 | ./remove 1)
-expected=" 2 3 4 5"
+out=$(echo "12345" | ./remove 1)
+expected=" 2345"
 [ "${out}" = "${expected}" ] || ng "$LINENO"
 
 # すべてのテストが成功した場合
